@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slides 6</title>
+    <meta charset="utf-8" />
+	<style>
+		body { font-family: sans-serif; padding: 0 2em; font-size: 18px; }
+		h1 { font-size: 1.25em; margin: 1.25em 0; }
+		form { max-width: 800px; }
+		fieldset { border: 1px solid #ccc; padding: 0 1em; margin: 1em 0; }
+		legend { color: #808080; font-size: .8em; text-transform: uppercase; padding: 0 .5em; }
+		label { display: block; margin: 0 0 .25em 0; color: #808080; font-size: .8em; }
+		div { margin: 1em 0; }
+		input, select { box-sizing: border-box; width:  100%; font-size: 1em; padding: .25em; border: 1px solid #ccc; }
+		a { display: inline-block; text-decoration: none; background: #808080; color: #fff; padding: .5em 1em;  }
+	</style>
+  </head>
+  <body>
+    <h1>Google Slides API Demo</h1>
+
+	<form action='#' method='post' id="createpresentation">
+
+		<div>
+			<label for='originurl'>Template presentation URL</label>
+			<input id='originurl' name='originurl' type='text' value='https://docs.google.com/presentation/d/1gEUVtxyNoVQef4PwUiyA4bpzr6OO9hWrd9tPh0E8-rw/edit' />
+		</div>
+
+		<div>
+			<label for='targetname'>New presentation name</label>
+			<input id='targetname' name='targetname' type='text' value='New presentation' />
+		</div>
+
+		<fieldset class="slide" id='slide-1' name='slide-1'>
+			<legend for='slide-1'>Slide 1</legend>
+
+		<div>
+		<label for='predefinedLayout-1'>Layout</label>
+		<select id='predefinedLayout-1' name='predefinedLayout-1'>
+			<option value='PREDEFINED_LAYOUT_UNSPECIFIED'>Unspecified layout.</option>
+			<option value='BLANK'> Blank layout, with no placeholders.</option>
+			<option value='CAPTION_ONLY'>Layout with a caption at the bottom.</option>
+			<option value='TITLE'>Layout with a title and a subtitle.</option>
+			<option value='TITLE_AND_BODY'>Layout with a title and body.</option>
+			<option value='TITLE_AND_TWO_COLUMNS'>Layout with a title and two columns.</option>
+			<option value='TITLE_ONLY'>Layout with only a title.</option>
+			<option  selected="selected" value='SECTION_HEADER'>Layout with a section title.</option>
+			<option value='SECTION_TITLE_AND_DESCRIPTION'>Layout with a title and subtitle on one side and description on the other.</option>
+			<option value='ONE_COLUMN_TEXT'>Layout with one title and one body, arranged in a single column.</option>
+			<option value='MAIN_POINT'>Layout with a main point.</option>
+			<option value='BIG_NUMBER'>Layout with a big number heading.</option>
+		</select>
+		</div>
+
+		<div>
+			<label for='textvalue-1'>Text</label>
+			<input id='textvalue-1' name='textvalue-1' type='text' value='This is the section title' />
+		</div>
+
+		</fieldset>
+
+		<fieldset class="slide" id='slide-2' name='slide-2'>
+			<legend for='slide-2'>Slide 2</legend>
+
+		<div>
+		<label for='predefinedLayout-2'>Layout</label>
+		<select id='predefinedLayout-2' name='predefinedLayout-2'>
+			<option value='PREDEFINED_LAYOUT_UNSPECIFIED'>Unspecified layout.</option>
+			<option value='BLANK'> Blank layout, with no placeholders.</option>
+			<option value='CAPTION_ONLY'>Layout with a caption at the bottom.</option>
+			<option value='TITLE'>Layout with a title and a subtitle.</option>
+			<option value='TITLE_AND_BODY'>Layout with a title and body.</option>
+			<option value='TITLE_AND_TWO_COLUMNS'>Layout with a title and two columns.</option>
+			<option value='TITLE_ONLY'>Layout with only a title.</option>
+			<option value='SECTION_HEADER'>Layout with a section title.</option>
+			<option value='SECTION_TITLE_AND_DESCRIPTION'>Layout with a title and subtitle on one side and description on the other.</option>
+			<option value='ONE_COLUMN_TEXT'>Layout with one title and one body, arranged in a single column.</option>
+			<option selected="selected" value='MAIN_POINT'>Layout with a main point.</option>
+			<option value='BIG_NUMBER'>Layout with a big number heading.</option>
+		</select>
+		</div>
+
+		<div>
+			<label for='textvalue-2'>Text</label>
+			<input id='textvalue-2' name='textvalue-2' type='text' value='This is the main point.' />
+		</div>
+
+		</fieldset>
+
+		<div>
+			<a href="#" id='submitbutton' name='submitbutton'>Generate presentation</a>
+		</div>
+
+	</form>
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize_button" style="display: none;">Authorize</button>
+    <button id="signout_button" style="display: none;">Sign Out</button>
+
+	<script type='text/javascript' src='script.js'></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+
+  </body>
+</html>
